@@ -1,4 +1,4 @@
-package io.github.longxiaoyun.is.robotstxt;
+package io.github.longxiaoyun.is;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

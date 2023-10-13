@@ -1,6 +1,6 @@
-package io.github.longxiaoyun.is.robotstxt.service;
+package io.github.longxiaoyun.is.service;
 
-import io.github.longxiaoyun.is.robotstxt.enums.DirectiveType;
+import io.github.longxiaoyun.is.enums.DirectiveType;
 
 public interface ParserHandler {
 

@@ -1,4 +1,4 @@
-package io.github.longxiaoyun.is.robotstxt.utils;
+package io.github.longxiaoyun.is.utils;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;

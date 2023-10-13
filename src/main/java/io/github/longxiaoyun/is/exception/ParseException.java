@@ -1,4 +1,4 @@
-package io.github.longxiaoyun.is.robotstxt.exception;
+package io.github.longxiaoyun.is.exception;
 
 public class ParseException extends RuntimeException{
     public ParseException(String message) {

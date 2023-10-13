@@ -1,4 +1,4 @@
-package io.github.longxiaoyun.is.robotstxt.utils;
+package io.github.longxiaoyun.is.utils;
 
 public class UserAgentUtil {
 

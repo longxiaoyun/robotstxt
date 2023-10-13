@@ -1,6 +1,6 @@
-package io.github.longxiaoyun.is.robotstxt.service.impl;
+package io.github.longxiaoyun.is.service.impl;
 
-import io.github.longxiaoyun.is.robotstxt.service.RobotsMatchStrategy;
+import io.github.longxiaoyun.is.service.RobotsMatchStrategy;
 
 public class RobotsLongestMatchStrategy implements RobotsMatchStrategy {
 

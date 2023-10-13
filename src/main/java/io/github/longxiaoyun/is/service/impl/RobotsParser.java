@@ -1,10 +1,10 @@
-package io.github.longxiaoyun.is.robotstxt.service.impl;
+package io.github.longxiaoyun.is.service.impl;
 
-import io.github.longxiaoyun.is.robotstxt.enums.DirectiveType;
-import io.github.longxiaoyun.is.robotstxt.exception.ParseException;
-import io.github.longxiaoyun.is.robotstxt.service.Matcher;
-import io.github.longxiaoyun.is.robotstxt.service.Parser;
-import io.github.longxiaoyun.is.robotstxt.service.ParserHandler;
+import io.github.longxiaoyun.is.enums.DirectiveType;
+import io.github.longxiaoyun.is.exception.ParseException;
+import io.github.longxiaoyun.is.service.Matcher;
+import io.github.longxiaoyun.is.service.Parser;
+import io.github.longxiaoyun.is.service.ParserHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

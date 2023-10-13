@@ -1,12 +1,12 @@
-package io.github.longxiaoyun.is.robotstxt.service.impl;
+package io.github.longxiaoyun.is.service.impl;
 
+import io.github.longxiaoyun.is.service.Matcher;
 import lombok.Getter;
-import io.github.longxiaoyun.is.robotstxt.entity.RobotsContent;
-import io.github.longxiaoyun.is.robotstxt.entity.RobotsGroup;
-import io.github.longxiaoyun.is.robotstxt.entity.RobotsRule;
-import io.github.longxiaoyun.is.robotstxt.enums.DirectiveType;
-import io.github.longxiaoyun.is.robotstxt.service.Matcher;
-import io.github.longxiaoyun.is.robotstxt.service.RobotsMatchStrategy;
+import io.github.longxiaoyun.is.entity.RobotsContent;
+import io.github.longxiaoyun.is.entity.RobotsGroup;
+import io.github.longxiaoyun.is.entity.RobotsRule;
+import io.github.longxiaoyun.is.enums.DirectiveType;
+import io.github.longxiaoyun.is.service.RobotsMatchStrategy;
 
 import java.net.MalformedURLException;
 import java.net.URL;

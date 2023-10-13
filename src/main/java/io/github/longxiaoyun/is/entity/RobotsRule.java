@@ -1,8 +1,8 @@
-package io.github.longxiaoyun.is.robotstxt.entity;
+package io.github.longxiaoyun.is.entity;
 
+import io.github.longxiaoyun.is.enums.DirectiveType;
 import lombok.Data;
 import lombok.experimental.Accessors;
-import io.github.longxiaoyun.is.robotstxt.enums.DirectiveType;
 
 import java.io.Serializable;
 import java.util.Objects;

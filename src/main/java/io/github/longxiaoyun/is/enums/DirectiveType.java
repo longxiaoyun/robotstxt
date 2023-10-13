@@ -1,4 +1,4 @@
-package io.github.longxiaoyun.is.robotstxt.enums;
+package io.github.longxiaoyun.is.enums;
 
 public enum DirectiveType {
     USER_AGENT,

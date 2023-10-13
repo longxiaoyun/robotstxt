@@ -1,4 +1,4 @@
-package io.github.longxiaoyun.is.robotstxt.entity;
+package io.github.longxiaoyun.is.entity;
 
 import lombok.Data;
 

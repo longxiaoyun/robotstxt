@@ -1,4 +1,4 @@
-package io.github.longxiaoyun.is.robotstxt.service;
+package io.github.longxiaoyun.is.service;
 
 import java.util.List;
 
