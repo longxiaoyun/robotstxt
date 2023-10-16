@@ -12,7 +12,15 @@ A robots.txt parser which aims to be complaint with the draft specification.
 
 
 ### 安装
+maven
 
+```xml
+<dependency>
+  <groupId>io.github.longxiaoyun.is</groupId>
+  <artifactId>robotstxt</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
 
 ### 使用
 
