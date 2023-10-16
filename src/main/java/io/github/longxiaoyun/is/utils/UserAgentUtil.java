@@ -1,5 +1,8 @@
 package io.github.longxiaoyun.is.utils;
 
+/**
+ * User-Agent 工具类
+ */
 public class UserAgentUtil {
 
     private UserAgentUtil() {

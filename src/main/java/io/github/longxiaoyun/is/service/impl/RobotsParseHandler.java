@@ -17,6 +17,7 @@ public class RobotsParseHandler implements ParserHandler {
     private RobotsGroup currentGroup;
     private boolean foundContent;
 
+
     @Override
     public void handleStart() {
         robotsContent = new RobotsContent();
@@ -36,6 +37,10 @@ public class RobotsParseHandler implements ParserHandler {
         flushCompleteGroup(false);
     }
 
+    /**
+     * 处理 User-Agent
+     * @param value User-Agent
+     */
     private void handleUserAgent(final String value) {
         if (foundContent) {
             flushCompleteGroup(true);
@@ -44,6 +49,11 @@ public class RobotsParseHandler implements ParserHandler {
         currentGroup.addUserAgent(value);
     }
 
+    /**
+     * 判断是否为十六进制字符
+     * @param b 要判断的字符
+     * @return 是否为十六进制字符
+     */
     private static boolean isHexChar(final byte b) {
         return Character.isDigit(b) || ('a' <= b && b <= 'f') || ('A' <= b && b <= 'F');
     }
