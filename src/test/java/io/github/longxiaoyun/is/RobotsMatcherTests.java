@@ -193,16 +193,16 @@ public class RobotsMatcherTests {
                 "\n" +
                 "User-agent: *\n" +
                 "Disallow: /";
-        String url = "http://www.baidu.com/";
+        String url = "http://www.baidu.com";
 
         final Parser parser = new RobotsParser(new RobotsParseHandler());
         final Matcher matcher = parser.parse(robotsTxtContent.getBytes(StandardCharsets.UTF_8));
 
         final RobotsContent actualContents = ((RobotsMatcher) matcher).getRobotsContent();
         log.info("RobotsTxtContent: {}", JSON.toJSONString(actualContents));
-        String userAgent = UserAgentUtil.parseUserAgent("Baiduspider");
+        String userAgent = UserAgentUtil.parseUserAgent("*");
         boolean isMatch = matcher.isAllowed(userAgent, url);
-        Assert.assertTrue(isMatch);
+        Assert.assertFalse(isMatch);
 
         userAgent = UserAgentUtil.parseUserAgent("*");
         boolean isMatch2 = matcher.isAllowed(userAgent, url);

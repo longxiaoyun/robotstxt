@@ -23,12 +23,12 @@ JDK 17
 </dependency>
 ```
 
-JDK8
+JDK1.8
 ```xml
 <dependency>
   <groupId>io.github.longxiaoyun.is</groupId>
   <artifactId>robotstxt</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
 </dependency>
 ```
 ### 使用
@@ -67,3 +67,6 @@ JDK8
     boolean isMatch = matcher.isAllowed(userAgent, url);
     Assert.assertTrue(isMatch);
 ```
+
+### 发布
+`mvn clean deploy`

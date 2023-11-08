@@ -7,6 +7,7 @@ import io.github.longxiaoyun.is.entity.RobotsGroup;
 import io.github.longxiaoyun.is.entity.RobotsRule;
 import io.github.longxiaoyun.is.enums.DirectiveType;
 import io.github.longxiaoyun.is.service.RobotsMatchStrategy;
+import org.apache.commons.lang3.StringUtils;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -121,7 +122,8 @@ public class RobotsMatcher implements Matcher {
 
     @Override
     public boolean isAllowed(final List<String> userAgents, final String url) {
-        final String path = getPath(url);
+        String path = getPath(url);
+        path = StringUtils.isBlank(path) ? "/" : path;
         Map.Entry<Match, Match> matches = computeMatchPriorities(userAgents, path);
         return allowVerdict(matches.getKey(), matches.getValue());
     }
