@@ -16,6 +16,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @Slf4j
@@ -208,10 +210,11 @@ public class RobotsMatcherTests {
 
         url = "https://www.baidu.com/";
         userAgent = UserAgentUtil.parseUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36");
-        boolean isMatch3 = matcher.isAllowedIgnoreGlobal(List.of(userAgent), url);
+
+        boolean isMatch3 = matcher.isAllowedIgnoreGlobal(Collections.singletonList(userAgent), url);
         Assert.assertTrue(isMatch3);
 
-        boolean isMatch4 = matcher.isAllowed(List.of(userAgent), url);
+        boolean isMatch4 = matcher.isAllowed(Collections.singletonList(userAgent), url);
         Assert.assertFalse(isMatch4);
     }
 }

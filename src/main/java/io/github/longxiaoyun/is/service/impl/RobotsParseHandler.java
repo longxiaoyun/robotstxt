@@ -112,37 +112,33 @@ public class RobotsParseHandler implements ParserHandler {
 
     @Override
     public void handleDirective(final DirectiveType directiveType, final String directiveValue) {
-        switch (directiveType) {
-            case USER_AGENT -> {
-                handleUserAgent(directiveValue);
-            }
-            case ALLOW, DISALLOW -> {
-                foundContent = true;
-                if (currentGroup.isGlobal() || !currentGroup.getUserAgents().isEmpty()) {
-                    final String path = maybeEscapePattern(directiveValue);
-                    currentGroup.addRule(directiveType, path);
+        if (directiveType == DirectiveType.USER_AGENT) {
+            handleUserAgent(directiveValue);
+        } else if (directiveType == DirectiveType.ALLOW || directiveType == DirectiveType.DISALLOW) {
+            foundContent = true;
+            if (currentGroup.isGlobal() || !currentGroup.getUserAgents().isEmpty()) {
+                final String path = maybeEscapePattern(directiveValue);
+                currentGroup.addRule(directiveType, path);
 
-                    if (directiveType == DirectiveType.ALLOW) {
-                        // Google-specific optimization: 'index.htm' and 'index.html' are normalized to '/'.
-                        final int slashPos = path.lastIndexOf('/');
+                if (directiveType == DirectiveType.ALLOW) {
+                    // Google-specific optimization: 'index.htm' and 'index.html' are normalized to '/'.
+                    final int slashPos = path.lastIndexOf('/');
 
-                        if (slashPos != -1) {
-                            final String fileName = path.substring(slashPos + 1);
-                            if ("index.htm".equals(fileName) || "index.html".equals(fileName)) {
-                                final String normalizedPath = path.substring(0, slashPos + 1) + '$';
+                    if (slashPos != -1) {
+                        final String fileName = path.substring(slashPos + 1);
+                        if ("index.htm".equals(fileName) || "index.html".equals(fileName)) {
+                            final String normalizedPath = path.substring(0, slashPos + 1) + '$';
 
-                                if (!currentGroup.hasRule(DirectiveType.ALLOW, normalizedPath)) {
-                                    logger.info("Allowing normalized path: {} -> {}", directiveValue, normalizedPath);
-                                    currentGroup.addRule(DirectiveType.ALLOW, normalizedPath);
-                                }
+                            if (!currentGroup.hasRule(DirectiveType.ALLOW, normalizedPath)) {
+                                logger.info("Allowing normalized path: {} -> {}", directiveValue, normalizedPath);
+                                currentGroup.addRule(DirectiveType.ALLOW, normalizedPath);
                             }
                         }
                     }
                 }
             }
-            case SITEMAP, UNKNOWN -> {
-                foundContent = true;
-            }
+        } else if (directiveType == DirectiveType.SITEMAP || directiveType == DirectiveType.UNKNOWN) {
+            foundContent = true;
         }
     }
 
