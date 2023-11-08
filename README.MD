@@ -61,8 +61,8 @@ JDK8
         "Disallow: /bh\n";
     ParserHandler parserHandler = new RobotsParseHandler();
     final Parser parser = new RobotsParser(parserHandler);
-    final Matcher matcher = parser.parse(robotsTxtContent.getBytes(StandardCharsets.UTF_8));
-
+    final Matcher matcher = parser.parse(robotsText.getBytes(StandardCharsets.UTF_8));
+    String url = "https://www.baidu.com";
     String userAgent = UserAgentUtil.parseUserAgent("Baiduspider");
     boolean isMatch = matcher.isAllowed(userAgent, url);
     Assert.assertTrue(isMatch);
