@@ -14,6 +14,7 @@ A robots.txt parser which aims to be complaint with the draft specification.
 ### 安装
 maven
 
+JDK 17
 ```xml
 <dependency>
   <groupId>io.github.longxiaoyun.is</groupId>
@@ -22,6 +23,14 @@ maven
 </dependency>
 ```
 
+JDK8
+```xml
+<dependency>
+  <groupId>io.github.longxiaoyun.is</groupId>
+  <artifactId>robotstxt</artifactId>
+  <version>1.0.2</version>
+</dependency>
+```
 ### 使用
 
 解析
